@@ -16,9 +16,14 @@
 declare(strict_types=1);
 
 namespace IvanCraft623\RankSystem\tag;
+use pocketmine\Server;
 
 use IvanCraft623\RankSystem\rank\Rank;
 use IvanCraft623\RankSystem\session\Session;
+use pocketmine\player\Player;
+
+use ShockedPlot7560\FactionMaster\API\MainAPI;
+use ShockedPlot7560\FactionMaster\Database\Entity\FactionEntity;
 
 use pocketmine\utils\SingletonTrait;
 
@@ -39,11 +44,18 @@ final class TagManager {
 	public function getTags() : array {
 		return $this->tags;
 	}
+	
+	public function getPlayerFaction(Player $player): string {
+		$faction = MainAPI::getFactionOfPlayer($player->getName());
+		return $faction instanceof FactionEntity ? $faction->getName() : "";
+	}
 
 	/**
 	 * @internal
 	 */
 	public function registerDefaults() : void {
+		$level = $this->getServer()->getPluginManager()->getPlugin("ProvaLevelSystem");
+		
 		$this->registerTag(new Tag("name", static function(Session $user) : string {
 			return $user->getName();
 		}));
@@ -67,6 +79,12 @@ final class TagManager {
 		}));
 		$this->registerTag(new Tag("chat_format", static function(Session $user) : string {
 			return $user->getHighestRank()->getChatFormat()["chatFormat"];
+		}));
+		$this->registerTag(new Tag("fac_name", static function(Session $user) : string {
+			return $this->getPlayerFaction($user);
+		}));
+		$this->registerTag(new Tag("level", static function(Session $user) : string {
+			return $level->getInstance()->getLevel($user);
 		}));
 	}
 }
