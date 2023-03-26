@@ -73,10 +73,10 @@ Hierarchy:
 #Configure users's nametag
 nametag:
   enabled: true
-  format: "{level}{nametag_ranks_prefix}{nametag_name-color}{name}{fac_name}"
+  format: "{level}{nametag_ranks_prefix}{nametag_name-color}{name}[§6{fac_name}]"
 
 #Configure users's chat
 chat:
   enabled: true
-  format: "{level}{chat_ranks_prefix}{chat_name-color}{name}{fac_name}{chat_format}{message}"
+  format: "{level}{chat_ranks_prefix}{chat_name-color}{name}[§6{fac_name}]{chat_format}{message}"
 ...
