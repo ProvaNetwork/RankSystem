@@ -1,23 +1,131 @@
 ---
 Guest:
   nametag:
-    prefix: "§2[§a+§2] "
+    prefix: " §aMember "
+    nameColor: "§7"
+  chat:
+    prefix: " §aMember "
+    nameColor: "§7"
+    chatFormat: " §5: §7"
+  permissions: []
+  inheritance: []
+Mvp+:
+  nametag:
+    prefix: " §bMVP+ "
     nameColor: "§f"
   chat:
-    prefix: "§2[§a+§2] "
+    prefix: " §bMVP+ "
     nameColor: "§f"
-    chatFormat: "§5: §7"
+    chatFormat: " §5: §f"
+  permissions: 
+  - rewards.permissions.mvpp
+  - fly.use.cmd
+  - broadcast.cmd
+  - ChickenWhite.cape
+  - Chimera.cape
+  - SG.cape
+  - RedR.cape
+  - Uchiha.cape
+  - RedUmm.cape
+  - fly.lobby
+  - viptp.cmd
+  inheritance: 
+    - Mvp
+Mvp:
+  nametag:
+    prefix: "  §bMVP "
+    nameColor: "§7"
+  chat:
+    prefix: " §bMVP "
+    nameColor: "§f"
+    chatFormat: " §5: §f"
+  permissions: 
+  - rewards.permissions.mvp
+  - fly.use.cmd
+  - nick.use.cmd
+  - broadcast.cmd
+  - ChickenBrown.cape
+  - Endermanattack.cape
+  - Nikeblack.cape
+  - Mashmello.cape
+  - GoldenEZ.cape
+  - fly.lobby
+  inheritance: 
+    - Vip+
+Vip+:
+  nametag:
+    prefix: " §6VIP+ "
+    nameColor: "§7"
+  chat:
+    prefix: " §6VIP+ "
+    nameColor: "§f"
+    chatFormat: " §5: §f"
   permissions:
-  - pocketmine.command.list
-  inheritance: []
+  - rewards.permissions.vipp
+  - fly.use.cmd
+  - nick.use.cmd
+  - broadcast.cmd
+  - enderchest.use.cmd
+  - GoldenGG.cape
+  - CawPe.cape
+  - Enderman.cape
+  - Glitch.cape
+  - fly.lobby
+  inheritance: 
+    - Vip
+Vip:
+  nametag:
+    prefix: " §eVIP "
+    nameColor: "§7"
+  chat:
+    prefix: " §eVIP "
+    nameColor: "§f"
+    chatFormat: "§5: §f"
+  permissions: 
+  - rewards.permissions.vip
+  - fly.use.cmd
+  - broadcast.cmd
+  - rename.use.cmd
+  - IronGolem.cape
+  - Cool.cape
+  - fly.lobby
+  inheritance: 
+    - Youtuber
+Youtuber:
+  nametag:
+    prefix: " §4YOUTUBER "
+    nameColor: "§7"
+  chat:
+    prefix: " §4YOUTUBER "
+    nameColor: "§7"
+    chatFormat: " §5: §7"
+  permissions: 
+  - fly.use.cmd
+  - broadcast.cmd
+  - bed.cape
+  - IronGolem.cape
+  - fly.lobby
+  inheritance: 
+    - Voter
+Voter:
+  nametag:
+    prefix: " §aVOTER "
+    nameColor: "§7"
+  chat:
+    prefix: " §aVOTER "
+    nameColor: "§7"
+    chatFormat: " §5: §7"
+  permissions: []
+  inheritance: 
+    - Guest
 Admin:
   nametag:
-    prefix: "§9[§bAdmin§9]§r "
+    prefix: "§9[ §l§cAdmin§r§9 ]§r "
     nameColor: "§a"
   chat:
-    prefix: "§9[§bAdmin§9]§r "
-    nameColor: "§a"
-    chatFormat: "§5: §6"
+    prefix: "§9[ §l§cAdmin§r§9 ]§r "
+    nameColor: "§f"
+    chatFormat: " §5: §6"
   permissions:
   - pocketmine.broadcast
   - pocketmine.command.gamemode
@@ -29,12 +137,12 @@ Admin:
     - Guest
 Owner:
   nametag:
-    prefix: "§l§7|§aOwner§7|§r "
+    prefix: "§l§7| §bOwner§7 |§r "
     nameColor: "§9"
   chat:
-    prefix: "§l§7|§aOwner§7|§r "
+    prefix: "§l§7 |§bOwner§7 |§r "
     nameColor: "§9"
-    chatFormat: " §4> §b"
+    chatFormat: " §4: §b"
   permissions:
   - pocketmine.command
   - pperms.command
